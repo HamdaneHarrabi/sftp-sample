@@ -1,18 +1,20 @@
 Client setup
 ============
 
-Copy the ssh key from the client to the serve
+Copy the ssh key from the client to the server
 
 $ ssh-copy-id sftpuser@sftp.example.hostname
 
 Les axes d'amélioration
 =======================
 
-1- config firwall flux I/O
+1- Config firwall flux I/O
 
-2- rsyslog
+2- config log sftp avec rsyslog
 
-3- utilisation d'ansible-vault pour le password
+3- Utilisation d'ansible-vault pour le password
+
+4- Pouvoir créer plusieurs utilisateurs
  
 Tests
 =========
@@ -27,7 +29,7 @@ Création d'un script pyhton ou playbook ansible(module docker) de test qui perm
  
  4- Tester que le user créé ne peut pas se connecter en ssh
  
- 5- Tester que le user créé ne peut pas aller dans le répertoire /etc en se connectant en sftp 
+ 5- Tester que le user créé ne peut pas aller dans le répertoire /etc en se connectant en sftp sur le serveur (user chrooter)
  
  
  
