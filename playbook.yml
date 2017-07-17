@@ -1,0 +1,5 @@
+- hosts: sftpservers
+  become: yes
+  
+  roles:
+    - role: sftp

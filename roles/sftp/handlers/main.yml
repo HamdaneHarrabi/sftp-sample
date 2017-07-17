@@ -1,0 +1,3 @@
+---
+- name: Restart sftp server
+  service: name=sshd state=restarted

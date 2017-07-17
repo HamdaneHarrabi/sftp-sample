@@ -1,0 +1,4 @@
+sftp_group: sftpgroup
+sftp_user: sftpuser
+#On peut utiliser ansible-vault pour le password http://docs.ansible.com/ansible/playbooks_vault.html
+password: 123456

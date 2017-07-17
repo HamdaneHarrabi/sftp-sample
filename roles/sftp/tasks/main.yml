@@ -1,0 +1,18 @@
+- name: Create new group on the sftp sever
+  group: name={{ sftp_group }} state=presepnt
+ 
+- name: Create new user on the sftp sever 
+  user: name={{ sftp_user }} shell=/sbin/nologin group={{ sftp_group }} password={{ password }}
+  
+- name: Create a common directory for all jailed chroot users
+  file: path=/sftp state=directory
+
+- name: Create a subdirectory for each user that you want to chroot
+  file: path=/sftp/{{ sftp_user }} state=directory
+
+- name: Create the home directory for user
+  file: path=/sftp/{{ sftp_user }}/home state=directory owner={{ sftp_user }} group={{ sftp_group }} 
+
+- name: Copy sshd config template
+  template: src=sshd_config dest=/etc/ssh/sshd_config
+  notify: Restart sftp-server   
