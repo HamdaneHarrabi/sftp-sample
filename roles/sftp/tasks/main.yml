@@ -1,3 +1,6 @@
+- name: Install openssh-server
+  yum: name=openssh-server state=latest
+  
 - name: Create new group on the sftp sever
   group: name={{ sftp_group }} state=presepnt
  
